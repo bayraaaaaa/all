@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { MONGO_URI, PORT } from "./config.js";
-
+import usersRouter from "./router/user.js";
 import router from "./router/Link.js"
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/links", router)
-
+app.use("/users/signup", usersRouter);
 
 
 
